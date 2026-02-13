@@ -6,8 +6,8 @@ Thank you for your interest in contributing to AI Smell! This document provides 
 
 ### Prerequisites
 
-- Node.js 16.0.0 or higher
-- npm or yarn
+- Node.js 20.0.0 or higher
+- pnpm
 
 ### Getting Started
 
@@ -21,27 +21,27 @@ Thank you for your interest in contributing to AI Smell! This document provides 
 2. **Install dependencies**
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. **Build the project**
 
    ```bash
-   npm run build
+   pnpm build
    ```
 
 4. **Run locally**
 
    ```bash
-   npm start -- <URL>
+   pnpm start -- <URL>
    # or for development with hot reload
-   npm run dev -- <URL>
+   pnpm dev -- <URL>
    ```
 
 5. **Link globally for testing**
 
    ```bash
-   npm link
+   pnpm link
    ai-smell <URL>
    ```
 
@@ -157,13 +157,13 @@ export const AI_TECH_STACKS = {
 
 ```bash
 # Run tests
-npm test
+pnpm test
 
 # Test specific URL
-npm run dev -- https://example.com
+pnpm dev -- https://example.com
 
 # Test with local link
-npm link
+pnpm link
 ai-smell https://example.com
 ```
 
@@ -174,42 +174,23 @@ ai-smell https://example.com
 - Add comments for complex logic
 - Keep sniffers focused on single responsibility
 
-## Publishing Workflow
+## Commit Messages
 
-1. **Update version**
+This project uses [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). Commit messages are linted automatically on commit. This is used by `semantic-release` to determine the next version number and generate changelogs.
 
-   ```bash
-   npm version patch  # 1.0.0 -> 1.0.1
-   npm version minor  # 1.0.0 -> 1.1.0
-   npm version major  # 1.0.0 -> 2.0.0
-   ```
+Please follow the format: `type(scope): subject`. For example: `feat(parser): add support for new meta tags`.
 
-2. **Build and test**
+## Release Process
 
-   ```bash
-   npm run build
-   npm link
-   ai-smell https://test-site.com
-   ```
+이 프로젝트는 [`semantic-release`](https://github.com/semantic-release/semantic-release)를 사용하여 릴리즈 과정을 자동화합니다. `main` 브랜치에 커밋이 병합되면 릴리즈가 자동으로 실행됩니다.
 
-3. **Login to npm** (first time only)
+릴리즈 유형(major, minor, patch)은 커밋 메시지에 따라 결정됩니다. Conventional Commits 명세를 따라주세요.
 
-   ```bash
-   npm login
-   ```
-
-4. **Publish**
-
-   ```bash
-   npm publish
-   ```
-
-5. **Verify publication**
-
-   ```bash
-   npm install -g ai-smell
-   ai-smell https://test-site.com
-   ```
+예시:
+- `feat(parser): Add new feature` -> **minor** 릴리즈
+- `fix(scorer): Fix a bug` -> **patch** 릴리즈
+- `perf(fetcher): Improve performance` -> **patch** 릴리즈
+- 커밋 내용에 `BREAKING CHANGE:` 포함 -> **major** 릴리즈
 
 ## Sniffer Scoring Guidelines
 

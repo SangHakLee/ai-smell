@@ -14,13 +14,13 @@ export class BoilerplateSniffer extends BaseSniffer {
     const title = cheerio('title').text();
     if (/^React App$/i.test(title)) {
       score += 0.9;
-      messages.push('Default "React App" title found');
+      messages.push('Default "React App" title found.');
     }
 
     const bodyText = cheerio('body').text().trim();
     if (/This site was created with/i.test(bodyText)) {
       score += 0.8;
-      messages.push('Contains "This site was created with..." text');
+      messages.push('Contains "This site was created with..." text.');
     }
 
     // Check for SPA boilerplate (empty body with just root div)

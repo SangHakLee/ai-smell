@@ -9,8 +9,8 @@ export class DesignSniffer extends BaseSniffer {
 
   sniff(cheerio: CheerioAPI): SniffResult {
     let score = 0;
-    let messages: string[] = [];
-    
+    const messages: string[] = [];
+
     const hasFlex = this.usesFlexbox(cheerio);
     const hasGrid = this.usesGrid(cheerio);
 
@@ -18,17 +18,17 @@ export class DesignSniffer extends BaseSniffer {
       score += 0.5;
       messages.push('Layout seems to be using older techniques (tables or floats), which might indicate a template.');
     }
-    
+
     const imageCount = cheerio('img').length;
     const svgCount = cheerio('svg').length;
-    
-    if (imageCount < 2 && svgCount < 2) {
-        score += 0.3;
-        messages.push('Very few images or SVGs used, suggesting a low-effort design.');
+
+    if (imageCount + svgCount < 2) {
+      score += 0.3;
+      messages.push('Very few images or SVGs used, suggesting a low-effort design.');
     }
 
-    if(messages.length === 0) {
-        return this.createResult(0, 'Layout seems modern and uses sufficient media.');
+    if (messages.length === 0) {
+      return this.createResult(0, 'Layout seems modern and uses sufficient media.');
     }
 
     return this.createResult(Math.min(score, 1.0), messages.join(' '));

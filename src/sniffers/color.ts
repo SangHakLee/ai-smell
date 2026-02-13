@@ -136,7 +136,7 @@ export class ColorPaletteSniffer extends BaseSniffer {
     rgbColors.forEach(rgb => {
       const match = rgb.match(/(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
       if (match) {
-        const [_, r, g, b] = match;
+        const [r, g, b] = match;
         const hex = this.rgbToHex(parseInt(r), parseInt(g), parseInt(b));
         foundColors.add(hex);
       }

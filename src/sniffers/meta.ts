@@ -83,7 +83,7 @@ export class MetaSniffer extends BaseSniffer {
       // Very short descriptions
       if (description.length < 50 && description.length > 10 && aiPhraseCount === 0) {
         score += 0.3;
-        messages.push('Meta description is very short, possibly a default');
+        messages.push('Meta description is very short, possibly a default.');
       }
     }
 

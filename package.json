@@ -1,17 +1,26 @@
 {
   "name": "ai-smell",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Detect AI-generated websites by analyzing tech stacks, domains, color palettes, and code patterns. Identifies sites built with Lovable, v0.dev, Bolt, and other AI builders.",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "bin": {
-    "ai-smell": "dist/index.js"
+    "ai-smell": "dist/src/index.js"
   },
   "scripts": {
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
     "build": "tsc",
-    "test": "vitest",
-    "prepublishOnly": "npm run build"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:debug": "vitest run --detectOpenHandles",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "relink": "pnpm build && pnpm link",
+    "prepublishOnly": "pnpm build",
+    "semantic-release": "semantic-release",
+    "commitlint": "commitlint",
+    "prepare": "husky"
   },
   "keywords": [
     "ai",
@@ -28,18 +37,21 @@
     "vercel",
     "cli"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/ai-smell.git"
+    "url": "https://github.com/sanghaklee/ai-smell.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/ai-smell/issues"
+    "url": "https://github.com/sanghaklee/ai-smell/issues"
   },
-  "homepage": "https://github.com/yourusername/ai-smell#readme",
+  "homepage": "https://github.com/sanghaklee/ai-smell#readme",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=20.0.0"
   },
   "files": [
     "dist",
@@ -48,13 +60,25 @@
     "LICENSE"
   ],
   "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.11.19",
+    "@typescript-eslint/eslint-plugin": "^7.13.0",
+    "@typescript-eslint/parser": "^7.13.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "semantic-release": "^25.0.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
-    "vitest": "^1.2.2"
+    "vitest": "^1.6.0"
   },
   "dependencies": {
     "axios": "^1.6.7",
-    "cheerio": "^1.0.0-rc.12"
+    "cheerio": "^1.0.0-rc.12",
+    "js-yaml": "^4.1.1"
   }
 }

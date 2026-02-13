@@ -27,5 +27,6 @@ describe('BoilerplateSniffer', () => {
     const sniffer = new BoilerplateSniffer();
     const result = sniffer.sniff(cheerio);
     expect(result.score).toBe(0);
+    expect(result.message).toBe('No obvious framework boilerplate found.');
   });
 });

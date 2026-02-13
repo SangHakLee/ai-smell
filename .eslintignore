@@ -1,0 +1,8 @@
+dist
+node_modules
+coverage
+*.js
+*.json
+*.md
+*.yml
+*.yaml

@@ -1,7 +1,7 @@
-import { describe, it, expect } from 'vitest';
 import { parseHtml } from '../src/parser';
 import { allSniffers } from '../src/sniffers';
 import { calculateOverallScore } from '../src/scorer';
+import { describe, it, expect } from 'vitest';
 
 describe('Integration Test', () => {
   it('should analyze a sample AI-generated page and return a high score', () => {
@@ -19,8 +19,9 @@ describe('Integration Test', () => {
       </html>
     `;
 
+    const url = 'https://example.com';
     const $ = parseHtml(sampleHtml);
-    const results = allSniffers.map(sniffer => sniffer.sniff($));
+    const results = allSniffers.map(sniffer => sniffer.sniff($, url));
     const { totalScore } = calculateOverallScore(results);
 
     // Check individual sniffers

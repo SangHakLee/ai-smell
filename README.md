@@ -1,5 +1,8 @@
 # AI Smell Detector 🐽
 
+[![npm version](https://badge.fury.io/js/ai-smell.svg)](https://badge.fury.io/js/ai-smell)
+[![CI/CD](https://github.com/sanghaklee/ai-smell/actions/workflows/release.yml/badge.svg)](https://github.com/sanghaklee/ai-smell/actions/workflows/release.yml)
+
 Detect AI-generated websites by analyzing tech stacks, domains, color palettes, and code patterns. Identifies sites built with Lovable, v0.dev, Bolt, and other AI builders.
 
 ## Quick Start
@@ -7,7 +10,7 @@ Detect AI-generated websites by analyzing tech stacks, domains, color palettes, 
 ### Install globally
 
 ```bash
-npm install -g ai-smell
+pnpm add -g ai-smell
 ```
 
 ### Use it
@@ -17,6 +20,21 @@ ai-smell https://example.com
 ```
 
 That's it! 🎉
+
+## Usage
+
+```bash
+ai-smell <URL> [options]
+```
+
+### Options
+
+| Flag | Description |
+|---|---|
+| `-f`, `--format <format>` | Set console output format (`text` (default), `json`, `yaml`). |
+| `-o`, `--output <file>` | Save report to a file. Format inferred from extension. |
+| `-h`, `--help` | Show this help message. |
+
 
 ## Example Output
 
@@ -138,5 +156,5 @@ MIT
 ## Links
 
 - [npm package](https://www.npmjs.com/package/ai-smell)
-- [GitHub repository](https://github.com/yourusername/ai-smell)
-- [Report issues](https://github.com/yourusername/ai-smell/issues)
+- [GitHub repository](https://github.com/sanghaklee/ai-smell)
+- [Report issues](https://github.com/sanghaklee/ai-smell/issues)

@@ -27,9 +27,13 @@ export function calculateOverallScore(results: SniffResult[]): { totalScore: num
   let totalWeight = 0;
 
   for (const result of results) {
-    const weight = snifferWeights[result.sniffer] || snifferWeights.default;
-    weightedScoreSum += result.score * weight;
-    totalWeight += weight;
+    // Only factor in sniffers that returned a positive score. This prevents
+    // sniffers that found nothing from diluting the overall score.
+    if (result.score > 0) {
+      const weight = snifferWeights[result.sniffer] || snifferWeights.default;
+      weightedScoreSum += result.score * weight;
+      totalWeight += weight;
+    }
   }
 
   const totalScore = totalWeight > 0 ? weightedScoreSum / totalWeight : 0;
