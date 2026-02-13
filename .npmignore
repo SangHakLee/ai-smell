@@ -1,0 +1,26 @@
+# Source files (only ship dist)
+src/
+tests/
+
+# Development files
+*.ts
+!*.d.ts
+tsconfig.json
+.vscode/
+.idea/
+
+# Test files
+*.test.js
+*.spec.js
+coverage/
+
+# Build artifacts
+node_modules/
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Git
+.git/
+.gitignore

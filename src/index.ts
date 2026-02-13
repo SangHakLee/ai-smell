@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { fetchHtml } from './fetcher';
 import { parseHtml } from './parser';
 import { allSniffers } from './sniffers';

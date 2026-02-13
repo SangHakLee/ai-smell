@@ -1,20 +1,52 @@
 {
   "name": "ai-smell",
-  "version": "0.0.1",
-  "description": "A tool to detect AI-generated web pages.",
+  "version": "1.0.0",
+  "description": "Detect AI-generated websites by analyzing tech stacks, domains, color palettes, and code patterns. Identifies sites built with Lovable, v0.dev, Bolt, and other AI builders.",
   "main": "dist/index.js",
+  "bin": {
+    "ai-smell": "dist/index.js"
+  },
   "scripts": {
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
     "build": "tsc",
-    "test": "vitest"
+    "test": "vitest",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "ai",
-    "detector"
+    "detector",
+    "ai-detection",
+    "website-analyzer",
+    "lovable",
+    "v0",
+    "bolt",
+    "ai-builder",
+    "tech-stack",
+    "nextjs",
+    "tailwind",
+    "vercel",
+    "cli"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ai-smell.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/ai-smell/issues"
+  },
+  "homepage": "https://github.com/yourusername/ai-smell#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CONTRIBUTING.md",
+    "LICENSE"
+  ],
   "devDependencies": {
     "@types/node": "^20.11.19",
     "ts-node": "^10.9.2",
