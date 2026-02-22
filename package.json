@@ -1,10 +1,11 @@
 {
   "name": "ai-smell",
   "version": "0.1.0",
+  "packageManager": "pnpm@10.29.3",
   "description": "Detect AI-generated websites by analyzing tech stacks, domains, color palettes, and code patterns. Identifies sites built with Lovable, v0.dev, Bolt, and other AI builders.",
-  "main": "dist/src/index.js",
+  "main": "dist/index.js",
   "bin": {
-    "ai-smell": "dist/src/index.js"
+    "ai-smell": "dist/index.js"
   },
   "scripts": {
     "start": "node dist/index.js",
@@ -20,7 +21,8 @@
     "prepublishOnly": "pnpm build",
     "semantic-release": "semantic-release",
     "commitlint": "commitlint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "typedoc": "typedoc --out docs src/index.ts"
   },
   "keywords": [
     "ai",
@@ -73,6 +75,7 @@
     "husky": "^9.0.11",
     "semantic-release": "^25.0.3",
     "ts-node": "^10.9.2",
+    "typedoc": "^0.26.0",
     "typescript": "^5.3.3",
     "vitest": "^1.6.0"
   },

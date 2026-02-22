@@ -5,11 +5,10 @@ module.exports = {
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
-        'plugin:jest/recommended',
     ],
     env: {
         node: true,
-        jest: true,
+        es2020: true,
     },
     rules: {
         // You can add custom rules here
