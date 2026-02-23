@@ -1,3 +1,7 @@
+## 1.1.0 (2026-02-23)
+
+* feat: index 페이지 생성 ([5c52cc4](https://github.com/sanghaklee/ai-smell/commit/5c52cc4))
+
 ## 1.0.0 (2026-02-22)
 
 * build: ci 수정 ([5d71996](https://github.com/sanghaklee/ai-smell/commit/5d71996))
