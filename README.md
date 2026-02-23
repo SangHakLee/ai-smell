@@ -5,11 +5,17 @@
 
 Detect AI-generated websites by analyzing tech stacks, domains, color palettes, and code patterns. Identifies sites built with Lovable, v0.dev, Bolt, and other AI builders.
 
+![AI-Smell Demo](public/demo.gif)
+
 ## Quick Start
 
 ### Install globally
 
 ```bash
+npm install -g ai-smell
+
+# or
+
 pnpm add -g ai-smell
 ```
 
@@ -39,7 +45,7 @@ ai-smell <URL> [options]
 ## Example Output
 
 ```
-🐽 AI-Smell test for: https://gcloud.lovable.app/
+🐽 AI-Smell test for: https://gcloud.lovable.app
 
 ## Analysis Report
 

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Smell - High-Accuracy AI Content Detection CLI</title>
+    <meta name="description"
+        content="Detect AI-generated websites by analyzing tech stacks, domains, color palettes, and code patterns. Identifies sites built with Lovable, v0.dev, Bolt, and other AI builders.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="hero-glow"></div>
+
+    <div class="container">
+        <header>
+            <div class="badge">Open Source AI Detector</div>
+            <h1>AI Smell</h1>
+            <p class="subtitle">\
+                Detect AI-generated websites with surgical precision.<br>
+                Analyzes tech stacks, domains, and design signatures instantly.</p>
+
+            <div class="terminal-container">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                    </div>
+                    <div class="terminal-content">
+                        <!-- demo.gif will be displayed here -->
+                        <img src="demo.gif" alt="AI Smell CLI Demo" class="demo-gif"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div
+                            style="display:none; color: #555; height: 100%; width: 100%; align-items: center; justify-content: center; font-family: monospace;">
+                            &gt; pnpm dlx ai-smell https://app.lovable.dev
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copy-section">
+                <div class="code-block" onclick="copyToClipboard()">
+                    <code id="install-cmd"> npm install -g ai-smell</code>
+                    <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <footer style="padding: 4rem 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p style="color: var(--text-secondary); font-size: 0.875rem;">
+            Powered by <aAI-Smell Engine. <a href="https://github.com/SangHakLee/ai-smell"
+                style="color: var(--accent-color); text-decoration: none;">GitHub</a>
+        </p>
+    </footer>
+
+    <script>
+        function copyToClipboard() {
+            const text = document.getElementById('install-cmd').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const block = document.querySelector('.code-block');
+                const originalColor = block.style.borderColor;
+                block.style.borderColor = '#a78bfa';
+                setTimeout(() => {
+                    block.style.borderColor = originalColor;
+                }, 1000);
+            });
+        }
+    </script>
+</body>
+
+</html>
